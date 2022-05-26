@@ -1,18 +1,41 @@
+//DEFININDO VARIAVEIS E IMPORTAÇÕES
 const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars');
+const bodyParser = require('body-parser');
+const cadastro = require('./models/Cadastro'); //alterar pelo novo banco depois
 
+
+//CONFIGURAÇÕES GERAIS
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
-//definindo rotas
-app.get('/add-pagamento', function(re,res){
-    res.render('add-pagamento');
+
+//ROTA DAS PAGINAS DE VIEW
+app.get('/cad-cadastro', function(re,res){
+    res.render('cad-cadastro');
 });
 
-app.get('/pagamento', function(req,res){
-    res.render('pagamento');
+//ROTA PARA RECEBER DADOS DO FORMULARIO
+app.post('/add-cadastro', function(req,res){
+    cadastro.create({
+        nome: req.body.nome,
+        cpf: req.body.cpf,
+        nascimento: req.body.nascimento,
+        cartao: req.body.cartao,
+        email: req.body.email,
+        atendimento: req.body.atendimento
+    }).then(function(){
+        res.send('Beneficiario(a) cadastrada!');
+    }).catch(function(err){
+        res.send('Erro: Beneficiario(a) não cadastrado com sucesso' + err);
+    })
+    
 });
 
+
+//DEFININDO E INICIANDO PORTA
 app.listen(8000)

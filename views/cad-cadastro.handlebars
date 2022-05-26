@@ -1,6 +1,6 @@
-<h1>Página de Cadastro e Geração de Senhas para Beneficiário(a):</h1>
+<h1>Cadastro e Solicitação de Senha:</h1>
 <form action="/add-cadastro" method="POST">
-    
+<div>
     <label>Nome</label>
     <input type="text" name="nome"><br><br>
 
@@ -10,11 +10,13 @@
     <label>Data de Nascimento</label>
     <input type="date" name="nascimento"><br><br>
     
-    <label>Número do Cartão</label>
+    <label>Número do Cartão CASSEMS</label>
     <input type="text" name="cartao"><br><br>
 
     <label>Email</label>
     <input type="text" name="email"><br><br>
+</div>  
+
 <div>
     <label>Atendimento</label><br><br>
     <input type="checkbox" id="cadastro1" name="atendimento" value="Cadastro">
@@ -27,7 +29,6 @@
     <label for="financeiro1">Financeiro</label><br><br>
 </div>
 
+<div><button type="submit">Cadastrar</button></div>
 
-
-    <button type="submit">Cadastrar</button>
 </form>

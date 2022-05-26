@@ -29,7 +29,7 @@ app.post('/add-cadastro', function(req,res){
         email: req.body.email,
         atendimento: req.body.atendimento
     }).then(function(){
-        res.send('Beneficiario(a) cadastrada!');
+        res.send('Beneficiario(a) cadastrada!' + '<br></br>' + 'SENHA: ' + (Math.random().toString(36).substr(2)) );
     }).catch(function(err){
         res.send('Erro: Beneficiario(a) não cadastrado com sucesso' + err);
     })

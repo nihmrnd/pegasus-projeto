@@ -13,6 +13,7 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
+app.use(express.static('public'));
 
 //ROTA DAS PAGINAS DE VIEW
 app.get('/cad-cadastro', function(re,res){
@@ -31,7 +32,7 @@ app.post('/add-cadastro', function(req,res){
     }).then(function(){
         res.send('Beneficiario(a) cadastrada!' + '<br></br>' + 'SENHA: ' + (Math.random().toString(36).substr(2)) );
     }).catch(function(err){
-        res.send('Erro: Beneficiario(a) não cadastrado com sucesso' + err);
+        res.send('Erro: Beneficiario(a) não cadastrado com sucesso' + '<br>' + err);
     })
     
 });

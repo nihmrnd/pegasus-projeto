@@ -1,34 +1,74 @@
-<h1>Cadastro e Solicitação de Senha:</h1>
-<form action="/add-cadastro" method="POST">
-<div>
-    <label>Nome</label>
-    <input type="text" name="nome"><br><br>
+    <div class="container">
+        <div class="form-image">
+            <img src="css/undraw_medicine_b-1-ol.svg">
+        </div>
+        <div class="form">
+            <form action="/add-cadastro" method="POST">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro de beneficiário(a)</h1>
+                    </div>
+                </div>
 
-    <label>CPF</label>
-    <input type="text" name="cpf"><br><br>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label>Nome</label>
+                        <input type="text" name="nome"><br><br>
+                    </div>
 
-    <label>Data de Nascimento</label>
-    <input type="date" name="nascimento"><br><br>
-    
-    <label>Número do Cartão CASSEMS</label>
-    <input type="text" name="cartao"><br><br>
+                    <div class="input-box">
+                        <label>CPF</label>
+                        <input type="text" name="cpf"><br><br>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label>Data de Nascimento</label>
+                        <input type="date" name="nascimento"><br><br>
+                    </div>
 
-    <label>Email</label>
-    <input type="text" name="email"><br><br>
-</div>  
+                    <div class="input-box">
+                        <label>Número do Cartão CASSEMS</label>
+                        <input type="text" name="cartao"><br><br>
+                    </div>
 
-<div>
-    <label>Atendimento</label><br><br>
-    <input type="checkbox" id="cadastro1" name="atendimento" value="Cadastro">
-    <label for="cadastro1">Cadastro</label><br><br>
-    <input type="checkbox" id="autorizacao1" name="atendimento" value="autorizacao">
-    <label for="autorizacao1"> Autorizacao</label><br><br>
-    <input type="checkbox" id="cartao1" name="atendimento" value="cartao">
-    <label for="cartao1">Cartao</label><br><br>
-    <input type="checkbox" id="financeiro1" name="atendimento" value="financeiro">
-    <label for="financeiro1">Financeiro</label><br><br>
-</div>
+                    <div class="input-box">
+                        <label>Email</label>
+                        <input type="text" name="email"><br><br>
+                    </div>
+                
+                </div>
 
-<div><button type="submit">Cadastrar</button></div>
+                <div class="atendimento-inputs">
+                    <div class="atendimento-title">
+                        <h6>Tipo de atendimento</h6>
+                    </div>
 
-</form>
+                    <div class="atendimento-group">
+                        <div class="atendimento-input">
+                            <input type="radio" id="cadastro1" name="atendimento" value="Cadastro">
+                            <label for="cadastro1">Cadastro</label><br><br>
+                        </div>
+
+                        <div class="atendimento-input">
+                            <input type="radio" id="autorizacao1" name="atendimento" value="autorizacao">
+                            <label for="autorizacao1"> Autorizacao</label><br><br>
+                        </div>
+
+                        <div class="atendimento-input">
+                            <input type="radio" id="cartao1" name="atendimento" value="cartao">
+                            <label for="cartao1">Cartao</label><br><br>
+                        </div>
+
+                        <div class="atendimento-input">
+                            <input type="radio" id="financeiro1" name="atendimento" value="financeiro">
+                        <label for="financeiro1">Financeiro</label><br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
